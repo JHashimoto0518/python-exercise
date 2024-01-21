@@ -1,3 +1,18 @@
+## Habit Tracker app AWS diagram
+# style: shape=%shape%;fillColor=%fill%;strokeColor=%stroke%;verticalLabelPosition=bottom;
+# label: %component%
+# shape: %shape%
+# fillColor: %fill%
+# strokeColor: %stroke%
+# verticalLabelPosition: bottom
+# width: 80
+# height: 80
+# nodespacing: 40
+# levelspacing: 40
+# edgespacing: 40
+# namespace: csvimport-
+# connect: {"from":"refs", "to":"id", "invert":true, "style":"curved=0;endArrow=none;endFill=0;dashed=1;strokeColor=#6c8ebf;"}
+## CSV data starts below this line
 id,component,fill,stroke,shape,refs
 1,Habit Tracker HTML App,#ffe6cc,#d79b00,mxgraph.aws4.mobile,
 2,UI Assets,#277116,#ffffff,mxgraph.aws4.s3,1

@@ -7,12 +7,24 @@ def convert_json_to_csv(json_file_path, csv_file_path):
         with open(json_file_path, "r") as json_file:
             data = json.load(json_file)
 
-        headers = ["id", "component", "fill", "stroke", "shape", "refs"]
-
         with open(csv_file_path, "w", newline="") as csv_file:
-            writer = csv.writer(csv_file)
-            writer.writerow(headers)
+            diagram = data["diagram"]
+            csv_file.write(f"## {diagram['title']}\n")
+            csv_file.write(
+                "# style: shape=%shape%;fillColor=%fill%;strokeColor=%stroke%;verticalLabelPosition=bottom;\n"
+            )
+            for key, value in diagram["style"].items():
+                csv_file.write(f"# {key}: {value}\n")
+            csv_file.write("# namespace: csvimport-\n")
+            csv_file.write(
+                '# connect: {"from":"refs", "to":"id", "invert":true, "style":"curved=0;endArrow=none;endFill=0;dashed=1;strokeColor=#6c8ebf;"}\n'
+            )
+            csv_file.write("## CSV data starts below this line\n")
+            csv_file.write("id,component,fill,stroke,shape,refs\n")
 
+            writer = csv.writer(csv_file)
+
+            # CSVデータ行の生成
             for resource in data["resources"]:
                 row = [
                     resource["id"],
