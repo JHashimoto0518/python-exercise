@@ -1,0 +1,38 @@
+{
+    "diagram": {
+        "title": "Habit Tracker app AWS diagram",
+        "layout": "horizontaltree",
+        "style": {
+            "label": "%component%",
+            "shape": "%shape%",
+            "fillColor": "%fill%",
+            "strokeColor": "%stroke%",
+            "verticalLabelPosition": "bottom",
+            "width": 80,
+            "height": 80,
+            "nodespacing": 40,
+            "levelspacing": 40,
+            "edgespacing": 40
+        }
+    },
+    "resources": [
+        {
+            "id": 1,
+            "component": "Habit Tracker HTML App",
+            "fill": "#ffe6cc",
+            "stroke": "#d79b00",
+            "shape": "mxgraph.aws4.mobile",
+            "refs": []
+        },
+        {
+            "id": 2,
+            "component": "UI Assets",
+            "fill": "#277116",
+            "stroke": "#ffffff",
+            "shape": "mxgraph.aws4.s3",
+            "refs": [
+                1
+            ]
+        }
+    ]
+}
